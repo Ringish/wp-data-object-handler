@@ -1,24 +1,24 @@
 {
   "plugin":{
-    "name":             "Starter Plugin",
-    "esc_name":         "Starter Plugin",
-    "tagline":          "WordPress Starter Plugin using Gulp",
-    "uri":              "http://mikehale.me/plugins/starter-plugin",
-    "desc":             "Starter Plugin using Gulp",
-    "author":           "MikeHale",
-    "author_uri":       "http://mikehale.me",
+    "name":             "Data Object Handler",
+    "esc_name":         "Data Object Handler",
+    "tagline":          "WordPress Data Object Handler using Gulp",
+    "uri":              "http://ringish.me/plugins/data-object-handler",
+    "desc":             "Data Object Handler using Gulp",
+    "author":           "Simon Ring",
+    "author_uri":       "http://ringish.me",
     "tags":             "",
-    "slug":             "starter-plugin",
-    "function_slug":    "starter_plugin",
+    "slug":             "data-object-handler",
+    "function_slug":    "doh",
     "constant_prefix":  "STARTER_PLUGIN",
     "version":          "1.0.0",
     "requires_version": "4.0.0",
     "tested_version":   "4.5.2",
     "stable_tag":       "1.0.0",
-    "package":          "Starter_Plugin",
-    "prefix":           "str_plgn_",
-    "menu_title":       "Starter Plugin Settings",
+    "package":          "Data_Object_Handler",
+    "prefix":           "doh_",
+    "menu_title":       "Data Object Handler Settings",
     "menu_icon":        "",
-    "dev":              "E:\\xampp\\htdocs\\amp\\wp-content\\plugins\\"
+    "dev":              "/Applications/MAMP/htdocs/begravning/wp-content/plugins/"
   }
 }

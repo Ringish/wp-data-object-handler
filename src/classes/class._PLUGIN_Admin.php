@@ -24,16 +24,34 @@ class {{plugin.package}}_Admin {
 	}
 
 	function admin_menu() {
-	  add_options_page(
+	  add_menu_page(
 			'{{plugin.esc_name}} Admin',
 			'{{plugin.menu_title}}',
 			'manage_options',
 			'{{plugin.slug}}-admin',
 			array( $this, 'admin_page' )
 		);
+	  add_submenu_page( '{{plugin.slug}}-admin', 'Post types', 'Post types', 'manage_options', '{{plugin.slug}}-post-types', array( $this, 'admin_page_post_types' ) );
 	}
 
 	function admin_page() {
+		$this->options = get_option( 'my_plugin_options' );
+
+		?>
+		<div class="wrap">
+			<h1>{{plugin.name}} Settings</h1>
+			<form method="post" action="options.php">
+	        <?php
+	            settings_fields( '{{plugin.function_slug}}_group' );
+	            do_settings_sections( '{{plugin.slug}}-admin' );
+	            submit_button();
+	        ?>
+	    </form>
+		</div>
+		<?php
+	}
+
+	function admin_page_post_types() {
 		$this->options = get_option( 'my_plugin_options' );
 
 		?>

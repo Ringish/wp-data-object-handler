@@ -95,4 +95,14 @@ gulp.task('dev', ['src'], function() {
   .pipe(gulp.dest(pluginTokens.plugin.dev + pluginTokens.plugin.slug, {overwrite: true}));
 });
 
-gulp.task('default', ['sass', 'js', 'l18n', 'src', 'tokens', 'dev']);
+//gulp.task('default', ['sass', 'js', 'l18n', 'src', 'tokens', 'dev']);
+
+gulp.task('default', function(){
+  gulp.watch("./stylesheets/*.scss", ['sass']);
+  gulp.watch("./scripts/**/*.js", ['js']);
+  gulp.watch(['plugin-build/*.php', './plugin-build/**/*.php'], ['l18n']);
+  gulp.watch(['./src/**', '!./src/**/*_PLUGIN*'], ['src']);
+  gulp.watch(['./src/**/*.php', './src/readme.*'], ['tokens']);
+  gulp.watch('./plugin-build/' + pluginTokens.plugin.slug + '/**',['dev']);
+  //gulp.watch("**/*",['deploy']);
+});
